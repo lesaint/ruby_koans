@@ -57,6 +57,8 @@ class AboutArrays < Neo::Koan
     assert_equal [:peanut, :butter, :and], array[0..2]
     assert_equal [:peanut, :butter], array[0...2]
     assert_equal [:and, :jelly], array[2..-1]
+    # => syntax with ranges means subarray starting at index Range.min+1 to the item at index Range.max from the beginning
+    #    therefor array[2..-1] means subarray from index 2+1 to index -1 (ie. 1 from the end => array.size - 1)
   end
 
   def test_pushing_and_popping_arrays
