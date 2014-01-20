@@ -14,6 +14,11 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  # make sure triangle is possible
+  # each size must be less than the sum of the other two
+  if a >= b+c || b >= a+c || c >= a+b
+  	fail TriangleError
+  end
   if a == b && b == c
 	:equilateral
   elsif a == b || b == c || a == c
